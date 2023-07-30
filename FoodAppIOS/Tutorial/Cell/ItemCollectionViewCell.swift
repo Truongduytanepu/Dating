@@ -18,7 +18,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
         nextBtn.setTitle("Skip", for: .normal)
         tutorialImage.image = nil
         titleLbl.text = nil
-        nextBtn.layer.cornerRadius = 15
+        nextBtn.layer.cornerRadius = 25
         nextBtn.clipsToBounds = true
     }
     

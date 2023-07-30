@@ -50,7 +50,7 @@ class RegisterViewController: UIViewController {
     @IBAction func rememberCheck(_ sender: Any) {
         check = !check
             if check {
-                btnRmm.setImage(UIImage(named: "checkbox"), for: .normal)
+                btnRmm.setImage(UIImage(named: "check"), for: .normal)
             } else {
                 btnRmm.setImage(UIImage(named: "unchecked"), for: .normal)
             }

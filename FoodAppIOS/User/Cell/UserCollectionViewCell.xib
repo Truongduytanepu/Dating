@@ -127,7 +127,7 @@
                 <outlet property="nameOwnLbl" destination="VTI-dq-9zo" id="rmL-i7-Bco"/>
                 <outlet property="unMatch" destination="9hU-A9-i1x" id="Zmn-80-Ya1"/>
             </connections>
-            <point key="canvasLocation" x="525.19083969465646" y="137.67605633802819"/>
+            <point key="canvasLocation" x="405" y="210"/>
         </collectionViewCell>
     </objects>
     <resources>

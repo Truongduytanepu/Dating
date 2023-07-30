@@ -62,6 +62,7 @@ class ProfileTableViewCell: UITableViewCell {
         viewAgePet.setUpView()
         viewShowMe.setUpView()
         viewAgeShowMe.setUpView()
+        logOut.setUpView()
     }
 }
 

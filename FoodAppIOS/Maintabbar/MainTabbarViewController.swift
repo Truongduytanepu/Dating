@@ -8,66 +8,37 @@
 import UIKit
 import ESTabBarController_swift
 
-
 class MainTabbarViewController: ESTabBarController {
 
-    
-    lazy var homeVC: UIViewController = {
-            let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UserViewController")
-            viewController.view.backgroundColor = .green
-            viewController.tabBarItem = ESTabBarItem(
-                CustomStyleTabBarContentView(),
-                title: "Home".uppercased(),
-                image: UIImage(named: "home"),
-                selectedImage: UIImage(named: "home"))
-            let nav = AppNavigationController(rootViewController: viewController)
-            return nav
-        }()
-            
-
-    lazy var home1VC: UIViewController = {
-            let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MessageViewController")
-            viewController.view.backgroundColor = .gray
-            viewController.tabBarItem = ESTabBarItem(
-                CustomStyleTabBarContentView(),
-                title: "Message".uppercased(),
-                image: UIImage(named: "message"),
-                selectedImage: UIImage(named: "message"))
-            let nav = AppNavigationController(rootViewController: viewController)
-            return nav
-        }()
-    
-    lazy var home2VC: UIViewController = {
-            let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController")
-            viewController.tabBarItem = ESTabBarItem(
-                CustomStyleTabBarContentView(),
-                title: "Profile".uppercased(),
-                image: UIImage(named: "user"),
-                selectedImage: UIImage(named: "user"))
-            let nav = AppNavigationController(rootViewController: viewController)
-            return nav
-        }()
-    
-    override func loadView() {
-        super.loadView()
-        loadTabBarView()
-        
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        UITabBar.appearance().backgroundColor = UIColor.white
-        UITabBar.appearance().tintColor = .clear
-        UITabBar.appearance().shadowImage = UIImage()
-        UITabBar.appearance().backgroundImage = UIImage()
-        
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        setupTabBarAppearance()
+        loadTabBarView()
         selectedIndex = 0
     }
 
+    private func setupTabBarAppearance() {
+        UITabBar.appearance().backgroundColor = UIColor.white
+        UITabBar.appearance().tintColor = .lightGray
+        UITabBar.appearance().shadowImage = UIImage()
+        UITabBar.appearance().backgroundImage = UIImage()
+    }
+
     private func loadTabBarView() {
+        let homeVC = createViewController(withIdentifier: "UserViewController", title: "Home", image: "home")
+        let home1VC = createViewController(withIdentifier: "MessageViewController", title: "Message", image: "message")
+        let home2VC = createViewController(withIdentifier: "ProfileViewController", title: "Profile", image: "user")
+        
         setViewControllers([homeVC, home1VC, home2VC], animated: true)
     }
-}
 
+    private func createViewController(withIdentifier: String, title: String, image: String) -> UIViewController {
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: withIdentifier)
+        let image = UIImage(named: image)
+        let selectedImage = image?.withRenderingMode(.alwaysOriginal)
+        let tabBarItem = ESTabBarItem(CustomStyleTabBarContentView(), title: title.uppercased(), image: image, selectedImage: selectedImage)
+        viewController.tabBarItem = tabBarItem
+        let nav = AppNavigationController(rootViewController: viewController)
+        return nav
+    }
+}

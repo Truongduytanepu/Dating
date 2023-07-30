@@ -36,7 +36,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEN-lO-aLr">
-                                <rect key="frame" x="70" y="720" width="299" height="50"/>
+                                <rect key="frame" x="60" y="720" width="319" height="50"/>
                                 <color key="backgroundColor" red="0.90588235859999999" green="0.38431376220000002" blue="0.4588235021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="tAO-cQ-SNE"/>
@@ -56,8 +56,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="DTn-Bm-ULi" secondAttribute="trailing" constant="60" id="0pQ-t5-8WD"/>
-                            <constraint firstItem="FEN-lO-aLr" firstAttribute="leading" secondItem="4We-QE-wvn" secondAttribute="leading" constant="70" id="4Hm-zL-lvZ"/>
-                            <constraint firstAttribute="trailing" secondItem="FEN-lO-aLr" secondAttribute="trailing" constant="70" id="8KZ-BI-tP6"/>
+                            <constraint firstItem="FEN-lO-aLr" firstAttribute="leading" secondItem="4We-QE-wvn" secondAttribute="leading" constant="60" id="4Hm-zL-lvZ"/>
+                            <constraint firstAttribute="trailing" secondItem="FEN-lO-aLr" secondAttribute="trailing" constant="60" id="8KZ-BI-tP6"/>
                             <constraint firstItem="dtM-Su-1x3" firstAttribute="leading" secondItem="4We-QE-wvn" secondAttribute="leading" id="EdZ-no-DlF"/>
                             <constraint firstAttribute="trailing" secondItem="dtM-Su-1x3" secondAttribute="trailing" id="Vhg-VN-QWm"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="FEN-lO-aLr" secondAttribute="bottom" constant="50" id="ZiO-G4-Ngk"/>

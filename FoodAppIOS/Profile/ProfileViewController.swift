@@ -12,6 +12,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        tableView.contentInsetAdjustmentBehavior = .never
     }
     func setupTableView() {
         tableView.dataSource = self
@@ -30,6 +31,6 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate{
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return  1200
+        return  1300
     }
 }

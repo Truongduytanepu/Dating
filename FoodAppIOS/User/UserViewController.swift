@@ -135,7 +135,7 @@ extension UserViewController: UICollectionViewDelegate {
 extension UserViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenSize = UIScreen.main.bounds
-                return CGSize(width: screenSize.width, height: 700)
+                return CGSize(width: screenSize.width + 100, height: 500)
     }
     
 }

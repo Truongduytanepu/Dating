@@ -42,7 +42,7 @@ class LoginViewController: UIViewController {
         if check {
             btnRmm.setImage(UIImage(named: "unchecked"), for: .normal)
         } else {
-            btnRmm.setImage(UIImage(named: "checkbox"), for: .normal)
+            btnRmm.setImage(UIImage(named: "check"), for: .normal)
         }
     }
     func setUpView(){
