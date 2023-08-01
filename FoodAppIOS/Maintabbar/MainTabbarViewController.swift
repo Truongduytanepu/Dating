@@ -25,9 +25,9 @@ class MainTabbarViewController: ESTabBarController {
     }
 
     private func loadTabBarView() {
-        let homeVC = createViewController(withIdentifier: "UserViewController", title: "Home", image: "home")
-        let home1VC = createViewController(withIdentifier: "MessageViewController", title: "Message", image: "message")
-        let home2VC = createViewController(withIdentifier: "ProfileViewController", title: "Profile", image: "user")
+        let homeVC = createViewController(withIdentifier: "UserViewController", title: "", image: "home")
+        let home1VC = createViewController(withIdentifier: "MessageViewController", title: "", image: "message")
+        let home2VC = createViewController(withIdentifier: "ProfileViewController", title: "", image: "user")
         
         setViewControllers([homeVC, home1VC, home2VC], animated: true)
     }

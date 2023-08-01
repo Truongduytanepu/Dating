@@ -11,6 +11,8 @@ target 'FoodAppIOS' do
   pod 'Firebase/Core'
   pod 'Kingfisher'
   pod "ESTabBarController-swift"
+  pod 'ActionSheetPicker-3.0'
+  pod "WARangeSlider"
   
   # Pods for FoodAppIOS
 

@@ -6,9 +6,16 @@
 //
 
 import UIKit
+import ActionSheetPicker_3_0
+import WARangeSlider
 
-class ProfileTableViewCell: UITableViewCell {
+protocol ProfileTableViewCellDelegate: AnyObject {
+    func editBtnTapped()
+}
 
+class ProfileTableViewCell: UITableViewCell, UIPickerViewDelegate,UIPickerViewDataSource {
+    @IBOutlet weak var rangeSlider: RangeSlider!
+    @IBOutlet weak var showGender: UIButton!
     @IBOutlet weak var viewImagePet: UIView!
     @IBOutlet weak var viewName: UIView!
     @IBOutlet weak var viewAgeShowMe: UIView!
@@ -23,9 +30,7 @@ class ProfileTableViewCell: UITableViewCell {
     @IBOutlet weak var viewImageOwn: UIView!
     @IBOutlet weak var imageOwn: UIImageView!
     @IBOutlet weak var logOut: UIButton!
-    @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var resultSlider: UILabel!
-    @IBOutlet weak var shoGender: UIButton!
     @IBOutlet weak var agePet: UILabel!
     @IBOutlet weak var typePet: UILabel!
     @IBOutlet weak var genderPet: UILabel!
@@ -38,11 +43,30 @@ class ProfileTableViewCell: UITableViewCell {
     @IBOutlet weak var editBtn1: UIButton!
     @IBOutlet weak var viewProfile: UIView!
     @IBOutlet weak var nameAndAgeOwn: UILabel!
+    var genderPickerView: UIPickerView!
+    var gender: [String]!
+    var currentUser: UserProfile?
+    var delegate: ProfileTableViewCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpUI()
-    }
+        
+        
+        rangeSlider.minimumValue = 0
+        rangeSlider.maximumValue = 100
+        
+        rangeSlider.lowerValue = 20
+            rangeSlider.upperValue = 80
 
+        rangeSlider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged) // continuous changes
+        
+    }
+    @objc func sliderValueChanged(_ slider: RangeSlider) {
+        let lowerValue = slider.lowerValue
+        let upperValue = slider.upperValue
+        resultSlider.text = "\(Int(lowerValue)) - \(Int(upperValue))"
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -63,7 +87,36 @@ class ProfileTableViewCell: UITableViewCell {
         viewShowMe.setUpView()
         viewAgeShowMe.setUpView()
         logOut.setUpView()
+        gender = ["Male", "Female", "Other"]
     }
+    
+    func showGenderPicker() {
+        // Sử dụng ActionSheetStringPicker để hiển thị UIPickerView trong action sheet
+        ActionSheetStringPicker.show(withTitle: "Select Gender", rows: gender, initialSelection: 0, doneBlock: { [weak self] picker, selectedIndex, selectedValue in
+            guard let selectedGender = selectedValue as? String else { return }
+            self?.currentUser?.gender = selectedGender
+            self?.showGender.setTitle(selectedGender, for: .normal)
+        }, cancel: nil, origin: self)
+    }
+    
+    @IBAction func editBtnHandle(_ sender: Any) {
+        delegate?.editBtnTapped()
+    }
+    @IBAction func selectGenderBtn(_ sender: Any) {
+        showGenderPicker()
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return gender.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return gender[row]
+    }
+    
 }
 
 extension UIView {

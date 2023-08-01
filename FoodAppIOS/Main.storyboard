@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -531,16 +530,7 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uLM-BH-8DL">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="IR1-N9-Opd">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yh2-wX-YJY"/>
@@ -582,13 +572,14 @@
                             <constraint firstItem="k0G-HN-ESU" firstAttribute="leading" secondItem="a1E-Zr-hVo" secondAttribute="leading" id="kZQ-BL-tQl"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Xjz-7D-42X"/>
                     <connections>
                         <outlet property="tableView" destination="k0G-HN-ESU" id="5SP-lS-flu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DSS-QZ-9FU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2108.3720930232557" y="-3.8626609442060089"/>
+            <point key="canvasLocation" x="3905.5813953488373" y="-3.8626609442060089"/>
         </scene>
         <!--Main Tabbar View Controller-->
         <scene sceneID="SHY-uU-zlK">
@@ -602,7 +593,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OAp-XQ-2ZH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2880" y="-4"/>
+            <point key="canvasLocation" x="4677.2093023255811" y="-4.5064377682403434"/>
         </scene>
         <!--Message View Controller-->
         <scene sceneID="QxQ-SI-gZb">
@@ -628,7 +619,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dda-de-wgi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3643" y="39"/>
+            <point key="canvasLocation" x="5439.0697674418607" y="38.626609442060087"/>
         </scene>
         <!--Edit Profile Own View Controller-->
         <scene sceneID="c5W-x1-Gb0">
@@ -706,7 +697,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpM-ib-nuz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4414" y="41"/>
+            <point key="canvasLocation" x="6210.6976744186049" y="40.557939914163093"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Fwx-cw-hZn">
@@ -784,7 +775,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B5f-L5-PqB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5068" y="46"/>
+            <point key="canvasLocation" x="6865.1162790697672" y="45.708154506437772"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="U0L-qt-n6q">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qs9-bq-lDa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fkx-lC-Rwf">
+                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Smy-Xp-UUv" kind="relationship" relationship="rootViewController" id="J3s-r9-qtA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zNh-8h-F82" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3006.9767441860463" y="-3.8626609442060089"/>
         </scene>
     </scenes>
     <resources>

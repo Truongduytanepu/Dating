@@ -99,6 +99,9 @@
                                 <state key="normal" title="Edit">
                                     <color key="titleColor" red="0.90588235859999999" green="0.38431376220000002" blue="0.4588235021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="editBtnHandle:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xKC-NV-7Uf"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LJT-KU-3Na">
                                 <rect key="frame" x="20" y="255" width="308" height="45"/>
@@ -368,7 +371,7 @@
                                     <constraint firstItem="IPi-e4-V8P" firstAttribute="top" secondItem="peX-zz-zdV" secondAttribute="top" id="pRq-2F-7S4"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet's Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIO-hw-lz0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discovery Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIO-hw-lz0">
                                 <rect key="frame" x="20" y="910" width="308" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="ftV-sA-6rJ"/>
@@ -392,6 +395,9 @@
                                         <color key="tintColor" red="0.90588235859999999" green="0.38431376220000002" blue="0.4588235021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Male"/>
+                                        <connections>
+                                            <action selector="selectGenderBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eqY-3t-OIf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -418,28 +424,31 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLU-C8-e2f">
-                                        <rect key="frame" x="257.66666666666669" y="10" width="40.333333333333314" height="25"/>
+                                        <rect key="frame" x="257.66666666666669" y="10" width="40.333333333333314" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="RRa-pI-zfg">
-                                        <rect key="frame" x="8" y="50" width="292" height="41"/>
-                                        <color key="tintColor" red="0.90588235859999999" green="0.38431376220000002" blue="0.4588235021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </slider>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XjB-Ms-NIE" customClass="RangeSlider" customModule="WARangeSlider">
+                                        <rect key="frame" x="10" y="50" width="288" height="35"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="trackHighlightTintColor">
+                                                <color key="value" red="0.90588235859999999" green="0.38431376220000002" blue="0.4588235021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="RRa-pI-zfg" firstAttribute="top" secondItem="HtQ-Ft-c0A" secondAttribute="bottom" constant="15" id="Bwy-uY-g1c"/>
-                                    <constraint firstItem="RRa-pI-zfg" firstAttribute="leading" secondItem="miV-gj-JwK" secondAttribute="leading" constant="10" id="Clm-5X-u64"/>
+                                    <constraint firstAttribute="bottom" secondItem="XjB-Ms-NIE" secondAttribute="bottom" constant="15" id="8Fa-pT-xVz"/>
+                                    <constraint firstItem="XjB-Ms-NIE" firstAttribute="leading" secondItem="miV-gj-JwK" secondAttribute="leading" constant="10" id="9iH-0q-YGl"/>
                                     <constraint firstAttribute="height" constant="100" id="CtT-q0-k2N"/>
                                     <constraint firstItem="mLU-C8-e2f" firstAttribute="top" secondItem="miV-gj-JwK" secondAttribute="top" constant="10" id="I5R-aR-ALb"/>
-                                    <constraint firstAttribute="trailing" secondItem="RRa-pI-zfg" secondAttribute="trailing" constant="10" id="LuG-8U-zYu"/>
                                     <constraint firstItem="HtQ-Ft-c0A" firstAttribute="leading" secondItem="miV-gj-JwK" secondAttribute="leading" constant="10" id="Rpn-ho-LxX"/>
-                                    <constraint firstAttribute="bottom" secondItem="RRa-pI-zfg" secondAttribute="bottom" constant="10" id="Wfb-lo-BMH"/>
                                     <constraint firstItem="HtQ-Ft-c0A" firstAttribute="top" secondItem="miV-gj-JwK" secondAttribute="top" constant="10" id="aXf-T8-TZs"/>
-                                    <constraint firstItem="RRa-pI-zfg" firstAttribute="top" secondItem="mLU-C8-e2f" secondAttribute="bottom" constant="15" id="kH0-VE-ABv"/>
+                                    <constraint firstItem="XjB-Ms-NIE" firstAttribute="top" secondItem="HtQ-Ft-c0A" secondAttribute="bottom" constant="15" id="lZm-Vp-1U1"/>
                                     <constraint firstAttribute="trailing" secondItem="mLU-C8-e2f" secondAttribute="trailing" constant="10" id="swz-zX-CjK"/>
+                                    <constraint firstAttribute="trailing" secondItem="XjB-Ms-NIE" secondAttribute="trailing" constant="10" id="tKN-p7-UNf"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJy-i9-Qcf">
@@ -544,9 +553,9 @@
                 <outlet property="nameAndAgeOwn" destination="NdP-4H-nSO" id="edp-KC-eK0"/>
                 <outlet property="nameOwn" destination="bvh-6K-7Be" id="21d-2b-MhO"/>
                 <outlet property="namePet" destination="vNj-Z7-tSv" id="eUM-UT-RqE"/>
+                <outlet property="rangeSlider" destination="XjB-Ms-NIE" id="mfd-XE-KfT"/>
                 <outlet property="resultSlider" destination="mLU-C8-e2f" id="NTU-w0-hRA"/>
-                <outlet property="shoGender" destination="kea-9l-2xZ" id="9Jr-hN-9iP"/>
-                <outlet property="slider" destination="RRa-pI-zfg" id="jGd-Tg-lcC"/>
+                <outlet property="showGender" destination="kea-9l-2xZ" id="UDs-Yv-pWf"/>
                 <outlet property="typePet" destination="gVi-c1-E8A" id="4jn-DH-ujU"/>
                 <outlet property="viewAge" destination="PyX-d6-tKq" id="VkD-Tn-BjR"/>
                 <outlet property="viewAgePet" destination="peX-zz-zdV" id="T5c-qr-BiQ"/>
